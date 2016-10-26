@@ -1,0 +1,5 @@
+"Account ;Description;CurrencyCode;Amount;"
+"121;tax1 ;USD;1000,02;"
+"122;tax2 ;EUR;1200,01;"
+"123;tax3;NOK;1100,00;"
+"124;tax4;NOK;999,21;"

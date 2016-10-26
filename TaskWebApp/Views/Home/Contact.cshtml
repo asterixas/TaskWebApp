@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "MVC";
+}
+
+
+@using PagedList;
+@using PagedList.Mvc;
+
+@model PagedList.IPagedList<TaskWebApp.Models.ErrorModel>
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+<table class="table">
+    <tr>
+        <th>
+           Error
+        </th>
+        <th>
+            Document name
+        </th>
+       
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Message)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DocumentName)
+            </td>
+            
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+
+                @Html.ActionLink("Remove", "Remove", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>
+@Html.PagedListPager(Model, page => Url.Action("Contact", new { page }), PagedListRenderOptions.ClassicPlusFirstAndLast)
